@@ -4,7 +4,8 @@
   "description": "Algae is an image generator which allows you to create and save fractals, providing rich structure of colours and structure",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron main.js"
   },
   "author": "Casper Smits <caspersmits11@outlook.com>",
   "license": "MIT",

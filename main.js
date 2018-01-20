@@ -46,7 +46,12 @@ function init() {
             return;
         }
 
-        win.webContents.send('render-completed', data);
+        data = JSON.parse(data);
+
+        if (data.response_type == 'error') {
+            console.log(data.error);
+        }
+
     });
 
     // Create window
