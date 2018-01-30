@@ -2,7 +2,7 @@ const { app, BrowserWindow, ipcMain } = require('electron');
 const url = require('url');
 const path = require('path');
 const net = require('net');
-var exec = require('child_process').exec;
+const exec = require('child_process').exec;
 
 var core_host = '127.0.0.1';
 var core_port = 8181;
@@ -52,15 +52,17 @@ function init() {
             console.log(data.error);
         }
 
+        win.webContents.send('render-completed', 'image-0.png');
     });
 
     // Create window
     win = new BrowserWindow({
-        width: 800,
+        width: 1000,
         height: 600,
+        useContentSize: true,
     });
 
-    // Load ui
+    // Load UI
     win.loadURL(url.format({
         pathname: path.join(__dirname, 'app/index.html'),
         protocol: 'file:',
@@ -68,5 +70,43 @@ function init() {
     }));
 
 }
+
+ipcMain.on('render-request', (event, arg) => {
+
+    win.webContents.send('render-completed', 'image-0.png');
+
+});
+
+ipcMain.on('startup-render-request', (event, arg) => {
+
+    client.write(JSON.stringify({
+        "request_type": "image",
+        "fractal": {
+            "identifier": "julia_fractal",
+            "settings": {
+                "constant": {
+                    "real": -0.4,
+                    "imaginary": 0.6
+                },
+                "max_iterations": 500,
+                "escape_value": 2.0,
+                "scale": {
+                    "center": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "zoom_level": 1.0
+                }
+            }
+        },
+        "color_scheme": {
+            "identifier": "grey_scale_color_scheme"
+        },
+        "render_settings": {
+            "width": arg.width,
+            "height": arg.height
+        }
+    }) + "\n");
+});
 
 app.on('ready', init);

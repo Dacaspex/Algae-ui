@@ -15,7 +15,29 @@
     </head>
     <body>
 
-        <h1 class="uk-heading-primary">Hello Algae!</h1>
+        <img src="" alt="" id="render-image" />
 
+        <!-- To be moved -->
+        <script type="text/javascript">
+
+            const $ = require('jQuery');
+            const { ipcRenderer } = require('electron');
+
+            $(document).ready(function() {
+
+                ipcRenderer.send('startup-render-request', {
+                    width: window.innerWidth,
+                    height: window.innerHeight,
+                });
+
+            });
+
+            ipcRenderer.on('render-completed', function(event, arg) {
+
+                $('#render-image').attr('src', '../renders/' + arg);
+
+            });
+
+        </script>
     </body>
 </html>
