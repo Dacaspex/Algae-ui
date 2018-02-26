@@ -77,6 +77,10 @@ ipcMain.on('render-request', (event, arg) => {
 
 });
 
+ipcMain.on('debug', (event, arg) => {
+    console.log('[debug] ' + arg);
+});
+
 ipcMain.on('startup-render-request', (event, arg) => {
 
     client.write(JSON.stringify({
