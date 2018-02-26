@@ -18,3 +18,8 @@ img#render-image {
     height: 100%;
     padding: 10px;
 }
+
+form > .uk-margin {
+    margin-bottom: 10px !important;
+    margin-top: 10px !important;
+}

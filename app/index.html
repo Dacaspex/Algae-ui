@@ -23,7 +23,21 @@
                 <div class="uk-margin">
                     <label class="uk-form-label" for="form-horizontal-text">Basic property</label>
                     <div class="uk-form-controls">
-                        <input class="uk-input" id="form-horizontal-text" type="text" placeholder="Some text...">
+                        <input class="uk-input" id="form-horizontal-text" type="text" value="2.0" />
+                    </div>
+                </div>
+
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="form-horizontal-text">Basic property</label>
+                    <div class="uk-form-controls">
+                        <input class="uk-input" id="form-horizontal-text" type="text" value="2.0" />
+                    </div>
+                </div>
+
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="form-horizontal-text">Basic property</label>
+                    <div class="uk-form-controls">
+                        <input class="uk-input" id="form-horizontal-text" type="text" value="2.0" />
                     </div>
                 </div>
 
@@ -31,29 +45,6 @@
         </div>
 
         <!-- To be moved -->
-        <script type="text/javascript">
-
-            const $ = require('jQuery');
-            const { ipcRenderer } = require('electron');
-            const click = require('./js/controls/click');
-
-            click.init();
-
-            $(document).ready(function() {
-
-                // ipcRenderer.send('startup-render-request', {
-                //     width: window.innerWidth,
-                //     height: window.innerHeight,
-                // });
-
-            });
-
-            ipcRenderer.on('render-completed', function(event, arg) {
-
-                $('#target-image').attr('src', '../renders/' + arg);
-
-            });
-
-        </script>
+        <script src="js/window.js"></script>
     </body>
 </html>
