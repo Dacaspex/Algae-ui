@@ -17,31 +17,21 @@
 
         <img src="" alt="" id="target-image" />
 
-        <div class="settings">
-            <form class="uk-form-horizontal uk-margin-large">
+        <div class="settings-outer">
 
-                <div class="uk-margin">
-                    <label class="uk-form-label" for="form-horizontal-text">Basic property</label>
-                    <div class="uk-form-controls">
-                        <input class="uk-input" id="form-horizontal-text" type="text" value="2.0" />
-                    </div>
-                </div>
+            <ul uk-tab>
+                <li><a href="#">Fractal settings</a></li>
+                <li><a href="#">Colour scheme</a></li>
+            </ul>
 
-                <div class="uk-margin">
-                    <label class="uk-form-label" for="form-horizontal-text">Basic property</label>
-                    <div class="uk-form-controls">
-                        <input class="uk-input" id="form-horizontal-text" type="text" value="2.0" />
-                    </div>
-                </div>
-
-                <div class="uk-margin">
-                    <label class="uk-form-label" for="form-horizontal-text">Basic property</label>
-                    <div class="uk-form-controls">
-                        <input class="uk-input" id="form-horizontal-text" type="text" value="2.0" />
-                    </div>
-                </div>
-
-            </form>
+            <ul class="uk-switcher uk-margin">
+                <li>
+                    <div class="fractal-settings"></div>
+                </li>
+                <li>
+                    <div class="colour-scheme-settings"></div>
+                </li>
+            </ul>
         </div>
 
         <!-- To be moved -->
