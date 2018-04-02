@@ -1,0 +1,20 @@
+{
+    "julia_fractal": {
+        "constant": {
+            "real": -0.4,
+            "imaginary": 0.6
+        },
+        "max_iterations": 500,
+        "escape_value": 2.0,
+        "scale": {
+            "center": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "zoom_level": 1.0
+        }
+    },
+    "mandel_brot_fractal": {
+
+    }
+}
