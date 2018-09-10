@@ -1,6 +1,8 @@
 # Algae-ui
 User interface for Algae, a fractal image generator
 
+**Note:** This repository is considered legacy and will not be updated. It was meant as a test.
+
 ## Installation instructions
 This project uses Node JS, npm and Electron. 
 
